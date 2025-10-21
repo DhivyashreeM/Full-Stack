@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3b82f6, #10b981);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #2563eb, #059669);
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent;
+}
+
+.gradient-text-purple {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.glass-effect {
+  @apply bg-white/80 backdrop-blur-md border border-white/20;
+}
+
+/* Custom buttons */
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+/* Progress bars */
+.progress-bar {
+  @apply w-full bg-gray-200 rounded-full h-3 overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-gradient-to-r from-blue-500 to-teal-500 transition-all duration-500 ease-out;
+}
+
+/* Taxonomic level colors */
+.taxonomic-kingdom { @apply bg-purple-100 text-purple-800 border-purple-200; }
+.taxonomic-phylum { @apply bg-blue-100 text-blue-800 border-blue-200; }
+.taxonomic-class { @apply bg-green-100 text-green-800 border-green-200; }
+.taxonomic-order { @apply bg-yellow-100 text-yellow-800 border-yellow-200; }
+.taxonomic-family { @apply bg-orange-100 text-orange-800 border-orange-200; }
+.taxonomic-genus { @apply bg-red-100 text-red-800 border-red-200; }
+.taxonomic-species { @apply bg-pink-100 text-pink-800 border-pink-200; }
+
+/* Map markers */
+.map-marker {
+  @apply w-4 h-4 bg-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 animate-pulse shadow-lg;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  @apply w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin;
+}
+
+/* Stats cards */
+.stat-card {
+  @apply bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300;
+}
+
+/* Navigation enhancements */
+.nav-item {
+  @apply relative overflow-hidden;
+}
+
+.nav-item::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-teal-600 transition-all duration-300;
+}
+
+.nav-item:hover::after {
+  @apply w-full;
+}
